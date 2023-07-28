@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "aws-sdk": "^2.826.0"
+    "@aws-sdk/client-s3": "^3.379.1"
   },
   "description": "A Github action that uploads to AWS S3",
   "devDependencies": {

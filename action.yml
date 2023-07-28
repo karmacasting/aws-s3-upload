@@ -10,9 +10,6 @@ inputs:
   key:
     description: The key to use for the object
     required: true
-  region:
-    description: The region to use for the bucket
-    required: true
 runs:
   using: node16
   main: dist/index.js
