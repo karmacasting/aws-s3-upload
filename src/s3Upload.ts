@@ -1,4 +1,4 @@
-import { getInput, setCommandEcho } from "@actions/core"
+import { getInput } from "@actions/core"
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3"
 import fs from "fs"
 
@@ -11,7 +11,6 @@ const githubInputs = () => {
 }
 
 export const runBuild = async (): Promise<string | void> => {
-  setCommandEcho(true)
   const inputs = githubInputs()
   console.log(inputs)
   const s3Client = new S3Client({})

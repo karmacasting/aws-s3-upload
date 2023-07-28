@@ -20,7 +20,6 @@ const githubInputs = () => {
     };
 };
 const runBuild = async () => {
-    (0, core_1.setCommandEcho)(true);
     const inputs = githubInputs();
     console.log(inputs);
     const s3Client = new client_s3_1.S3Client({});
@@ -41100,8 +41099,9 @@ exports.run = void 0;
 const core_1 = __nccwpck_require__(42186);
 const s3Upload_1 = __nccwpck_require__(43358);
 const run = async () => {
+    (0, core_1.setCommandEcho)(true);
     console.log("*****Starting aws-s3-upload*****");
-    const result = (0, s3Upload_1.runBuild)();
+    const result = await (0, s3Upload_1.runBuild)();
     if (typeof result === "string") {
         (0, core_1.setFailed)(result);
     }
