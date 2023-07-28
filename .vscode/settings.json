@@ -13,6 +13,7 @@
   "files.exclude": {
     "**/coverage": true,
     "**/dist": true,
+    "**/lib": true,
     "**/node_modules": true,
     "**/tmp": true
   },

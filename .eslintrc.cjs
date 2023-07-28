@@ -1,7 +1,7 @@
 /* eslint-env node */
 module.exports = {
   extends: ["eslint:recommended", "plugin:eslint-comments/recommended", "plugin:import/recommended", "plugin:import/typescript"],
-  ignorePatterns: ["dist", "node_modules", "!.prettierrc.js", "!.sortierrc.js"],
+  ignorePatterns: ["dist", "lib", "node_modules", "!.prettierrc.js", "!.sortierrc.js"],
   overrides: [
     {
       extends: [

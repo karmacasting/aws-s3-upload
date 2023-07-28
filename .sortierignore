@@ -2,6 +2,7 @@
 **/bin
 **/coverage
 **/dist
+**/lib
 **/log
 **/node_modules
 **/tmp

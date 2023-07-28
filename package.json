@@ -5,8 +5,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "aws-sdk": "^2.826.0",
-    "yargs": "^17.7.2"
+    "aws-sdk": "^2.826.0"
   },
   "description": "A Github action that uploads to AWS S3",
   "devDependencies": {
@@ -14,6 +13,7 @@
     "@types/node": "^20.4.3",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
+    "@vercel/ncc": "^0.36.1",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -33,18 +33,20 @@
   "homepage": "https://github.com/karmacasting/aws-s3-upload#readme",
   "keywords": [],
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "name": "aws-s3-upload",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karmacasting/aws-s3-upload.git"
   },
   "scripts": {
+    "all": "npm run build && npm run lint && npm run package",
     "build": "tsc",
     "lint": "yarn eslint . --max-warnings 0",
+    "package": "ncc build --source-map --license licenses.txt",
     "precommit": "lint-staged",
     "prepare": "husky install",
-    "sortier:all": "sortier './**/*.{css,html,js,json,jsx,ts,tsx}' '!**/dist' '!**/node_modules' '!**/tmp'",
+    "sortier:all": "sortier './**/*.{css,html,js,json,jsx,ts,tsx}' '!**/dist' '!**/lib' '!**/node_modules' '!**/tmp'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "version": "1.0.0"
