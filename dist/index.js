@@ -1,6 +1,30 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 94822:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.run = void 0;
+const core_1 = __nccwpck_require__(42186);
+const s3Upload_1 = __nccwpck_require__(43358);
+const run = async () => {
+    (0, core_1.setCommandEcho)(true);
+    console.log("*****Starting aws-s3-upload*****");
+    const result = await (0, s3Upload_1.runBuild)();
+    if (typeof result === "string") {
+        (0, core_1.setFailed)(result);
+    }
+    console.log("*****Completed aws-s3-upload*****");
+};
+exports.run = run;
+(0, exports.run)();
+
+
+/***/ }),
+
 /***/ 43358:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
@@ -41088,30 +41112,13 @@ module.exports = JSON.parse('{"partitions":[{"id":"aws","outputs":{"dnsSuffix":"
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-var exports = __webpack_exports__;
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.run = void 0;
-const core_1 = __nccwpck_require__(42186);
-const s3Upload_1 = __nccwpck_require__(43358);
-const run = async () => {
-    (0, core_1.setCommandEcho)(true);
-    console.log("*****Starting aws-s3-upload*****");
-    const result = await (0, s3Upload_1.runBuild)();
-    if (typeof result === "string") {
-        (0, core_1.setFailed)(result);
-    }
-    console.log("*****Completed aws-s3-upload*****");
-};
-exports.run = run;
-
-})();
-
-module.exports = __webpack_exports__;
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(94822);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map

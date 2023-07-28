@@ -10,3 +10,5 @@ export const run = async () => {
   }
   console.log("*****Completed aws-s3-upload*****")
 }
+
+run()
