@@ -5,6 +5,7 @@ import fs from "fs"
 const githubInputs = () => {
   return {
     bucket: getInput("bucket", { required: true }),
+    contentType: getInput("contentType"),
     file: getInput("file", { required: true }),
     key: getInput("key", { required: true }),
   }
@@ -21,7 +22,7 @@ export const runBuild = async (): Promise<string | void> => {
       new PutObjectCommand({
         Body: fileBuffer,
         Bucket: inputs.bucket,
-        ContentType: "application/zip",
+        ContentType: inputs.contentType,
         Key: inputs.key,
       }),
     )
