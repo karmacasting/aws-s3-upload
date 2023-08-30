@@ -18,7 +18,7 @@ export const runBuild = async (): Promise<string | void> => {
     const fileBuffer = fs.readFileSync(inputs.file)
     const result = await s3Client.send(
       new PutObjectCommand({
-        Body: fileBuffer.toString("binary"),
+        Body: fileBuffer,
         Bucket: inputs.bucket,
         Key: inputs.key,
       }),
