@@ -40,11 +40,11 @@
     "url": "git+https://github.com/karmacasting/aws-s3-upload.git"
   },
   "scripts": {
-    "all": "npm run build && npm run lint && npm run package",
+    "all": "npm run lint && npm run build && npm run package",
     "build": "tsc",
     "lint": "yarn eslint . --max-warnings 0",
     "package": "ncc build --source-map --license licenses.txt",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && npm run build && npm run package",
     "prepare": "husky install",
     "sortier:all": "sortier './**/*.{css,html,js,json,jsx,ts,tsx}' '!**/dist' '!**/lib' '!**/node_modules' '!**/tmp'",
     "test": "echo \"Error: no test specified\" && exit 1"
