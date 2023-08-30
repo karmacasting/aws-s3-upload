@@ -39,6 +39,7 @@ const fs_1 = tslib_1.__importDefault(__nccwpck_require__(57147));
 const githubInputs = () => {
     return {
         bucket: (0, core_1.getInput)("bucket", { required: true }),
+        contentType: (0, core_1.getInput)("contentType"),
         file: (0, core_1.getInput)("file", { required: true }),
         key: (0, core_1.getInput)("key", { required: true }),
     };
@@ -53,7 +54,7 @@ const runBuild = async () => {
         const result = await s3Client.send(new client_s3_1.PutObjectCommand({
             Body: fileBuffer,
             Bucket: inputs.bucket,
-            ContentType: "application/zip",
+            ContentType: inputs.contentType,
             Key: inputs.key,
         }));
         console.log(result);
