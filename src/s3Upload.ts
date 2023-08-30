@@ -20,6 +20,7 @@ export const runBuild = async (): Promise<string | void> => {
       new PutObjectCommand({
         Body: fileBuffer,
         Bucket: inputs.bucket,
+        ContentType: "application/zip",
         Key: inputs.key,
       }),
     )
