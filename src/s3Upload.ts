@@ -15,7 +15,7 @@ export const runBuild = async (): Promise<string | void> => {
   console.log(inputs)
   const s3Client = new S3Client({})
   try {
-    const fileContent = fs.readFileSync(inputs.file, "utf-8")
+    const fileContent = fs.readFileSync(inputs.file)
     const result = await s3Client.send(
       new PutObjectCommand({ Body: fileContent, Bucket: inputs.bucket, Key: inputs.key }),
     )
