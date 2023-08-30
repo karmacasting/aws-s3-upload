@@ -12,7 +12,8 @@ const githubInputs = () => {
 
 export const runBuild = async (): Promise<string | void> => {
   const inputs = githubInputs()
-  console.log("v1", inputs)
+  console.log("v1-20230830")
+  console.log(inputs)
   const s3Client = new S3Client({})
   try {
     const fileBuffer = fs.readFileSync(inputs.file)
