@@ -11,5 +11,5 @@ inputs:
     description: The key to use for the object
     required: true
 runs:
-  using: node16
+  using: node20
   main: dist/index.js

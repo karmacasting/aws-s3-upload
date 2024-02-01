@@ -13,7 +13,7 @@ const githubInputs = () => {
 
 export const runBuild = async (): Promise<string | void> => {
   const inputs = githubInputs()
-  console.log("v1-20230830")
+  console.log("v2-20240201")
   console.log(inputs)
   const s3Client = new S3Client({})
   try {
